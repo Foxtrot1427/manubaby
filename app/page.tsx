@@ -198,7 +198,7 @@ export default function Home() {
       </div>
 
       {/* Scattered hearts around the page - smaller on mobile */}
-      <div className="pointer-events-none absolute inset-0">
+<div className="pointer-events-none absolute inset-0 hidden md:block"> 
         <Heart
           className="absolute top-20 left-1/4 w-6 h-6 md:w-12 md:h-12 text-pink-300 fill-pink-300 floating-heart"
           style={{ animationDelay: "0.6s" }}
