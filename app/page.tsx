@@ -353,7 +353,7 @@ export default function Home() {
             {yesChoice === "movie-night" && (
               <p className="text-lg text-gray-700">
                 Movie night it is! You pick the movie, I&apos;ll bring the
-                snacks and the cuddles (virtual or in-person).
+                snacks and the cuddles (virtual).
               </p>
             )}
 
