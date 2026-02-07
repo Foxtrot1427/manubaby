@@ -61,27 +61,27 @@ export default function Home() {
     noStage === 0
       ? "No"
       : noStage === 1
-        ? "Are you sure?"
-        : noStage === 2
-          ? "Change your mind"
-          : noStage === 3
-            ? "Pretty please?"
-            : noStage === 4
-              ? "Pls :("
-              : "";
+      ? "Are you sure?"
+      : noStage === 2
+      ? "Change your mind"
+      : noStage === 3
+      ? "Pretty please?"
+      : noStage === 4
+      ? "Pls :("
+      : "";
 
   const noScaleClass =
     noStage === 0
       ? "scale-100"
       : noStage === 1
-        ? "scale-90 mt-60"
-        : noStage === 2
-          ? "scale-75"
-          : noStage === 3
-            ? "scale-50 ml-60"
-            : noStage === 4
-              ? "scale-25"
-              : "scale-0";
+      ? "scale-90 mt-60"
+      : noStage === 2
+      ? "scale-75"
+      : noStage === 3
+      ? "scale-50 ml-60"
+      : noStage === 4
+      ? "scale-25"
+      : "scale-0";
 
   const noDisabled = noStage >= 5;
 
@@ -118,8 +118,8 @@ export default function Home() {
         }
       `}</style>
 
-      {/* Photos around box */}
-      <div className="pointer-events-none absolute inset-0">
+      {/* Photos around box - hidden on mobile to avoid overlap */}
+      <div className="pointer-events-none absolute inset-0 hidden md:block">
         {/* Top left photo with hearts */}
         <div className="absolute top-6 left-4">
           <div className="relative w-60 h-60 rounded-2xl overflow-hidden border-4 border-white shadow-lg rotate-[-6deg]">
@@ -130,11 +130,11 @@ export default function Home() {
             />
           </div>
           <Heart
-            className="absolute -top-2 -right-2 w-12 h-12 text-pink-500 fill-pink-500 floating-heart"
+            className="absolute -top-2 -right-2 w-8 h-8 text-pink-500 fill-pink-500 floating-heart"
             style={{ animationDelay: "0s" }}
           />
           <Heart
-            className="absolute -bottom-1 -left-2 w-12 h-12 text-red-400 fill-red-400 pulse-heart"
+            className="absolute -bottom-1 -left-2 w-8 h-8 text-red-400 fill-red-400 pulse-heart"
             style={{ animationDelay: "0.5s" }}
           />
         </div>
@@ -149,11 +149,11 @@ export default function Home() {
             />
           </div>
           <Heart
-            className="absolute -top-3 -left-2 w-12 h-12 text-pink-400 fill-pink-400 pulse-heart"
+            className="absolute -top-3 -left-2 w-8 h-8 text-pink-400 fill-pink-400 pulse-heart"
             style={{ animationDelay: "0.3s" }}
           />
           <Heart
-            className="absolute -bottom-2 -right-1 w-12 h-12 text-red-500 fill-red-500 floating-heart"
+            className="absolute -bottom-2 -right-1 w-8 h-8 text-red-500 fill-red-500 floating-heart"
             style={{ animationDelay: "1s" }}
           />
         </div>
@@ -168,11 +168,11 @@ export default function Home() {
             />
           </div>
           <Heart
-            className="absolute -top-2 -right-3 w-12 h-12 text-pink-500 fill-pink-500 floating-heart"
+            className="absolute -top-2 -right-3 w-8 h-8 text-pink-500 fill-pink-500 floating-heart"
             style={{ animationDelay: "0.7s" }}
           />
           <Heart
-            className="absolute -bottom-3 -left-1 w-12 h-12 text-red-400 fill-red-400 pulse-heart"
+            className="absolute -bottom-3 -left-1 w-8 h-8 text-red-400 fill-red-400 pulse-heart"
             style={{ animationDelay: "0.2s" }}
           />
         </div>
@@ -187,38 +187,40 @@ export default function Home() {
             />
           </div>
           <Heart
-            className="absolute -top-1 -left-2 w-12 h-12 text-pink-400 fill-pink-400 pulse-heart"
+            className="absolute -top-1 -left-2 w-8 h-8 text-pink-400 fill-pink-400 pulse-heart"
             style={{ animationDelay: "0.9s" }}
           />
           <Heart
-            className="absolute -bottom-2 -right-2 w-12 h-12 text-red-500 fill-red-500 floating-heart"
+            className="absolute -bottom-2 -right-2 w-8 h-8 text-red-500 fill-red-500 floating-heart"
             style={{ animationDelay: "0.4s" }}
           />
         </div>
+      </div>
 
-        {/* Scattered hearts around the page */}
+      {/* Scattered hearts around the page - smaller on mobile */}
+      <div className="pointer-events-none absolute inset-0">
         <Heart
-          className="absolute top-20 left-1/4 w-12 h-12 text-pink-300 fill-pink-300 floating-heart"
+          className="absolute top-20 left-1/4 w-6 h-6 md:w-12 md:h-12 text-pink-300 fill-pink-300 floating-heart"
           style={{ animationDelay: "0.6s" }}
         />
         <Heart
-          className="absolute top-32 right-1/4 w-12 h-12 text-red-300 fill-red-300 pulse-heart"
+          className="absolute top-32 right-1/4 w-6 h-6 md:w-12 md:h-12 text-red-300 fill-red-300 pulse-heart"
           style={{ animationDelay: "1.2s" }}
         />
         <Heart
-          className="absolute bottom-24 left-1/3 w-12 h-12 text-pink-400 fill-pink-400 floating-heart"
+          className="absolute bottom-24 left-1/3 w-6 h-6 md:w-12 md:h-12 text-pink-400 fill-pink-400 floating-heart"
           style={{ animationDelay: "0.8s" }}
         />
         <Heart
-          className="absolute bottom-40 right-1/3 w-12 h-12 text-red-400 fill-red-400 pulse-heart"
+          className="absolute bottom-40 right-1/3 w-6 h-6 md:w-12 md:h-12 text-red-400 fill-red-400 pulse-heart"
           style={{ animationDelay: "1.5s" }}
         />
         <Heart
-          className="absolute top-1/3 left-12 w-12 h-12 text-pink-500 fill-pink-500 floating-heart"
+          className="absolute top-1/3 left-12 w-6 h-6 md:w-12 md:h-12 text-pink-500 fill-pink-500 floating-heart"
           style={{ animationDelay: "1.1s" }}
         />
         <Heart
-          className="absolute top-1/2 right-12 w-12 h-12 text-red-500 fill-red-500 pulse-heart"
+          className="absolute top-1/2 right-12 w-6 h-6 md:w-12 md:h-12 text-red-500 fill-red-500 pulse-heart"
           style={{ animationDelay: "0.3s" }}
         />
       </div>
@@ -238,21 +240,21 @@ export default function Home() {
         {/* Question */}
         {answer === null && (
           <Card className="p-8 text-center space-y-6 animate-fade-in bg-white/90 backdrop-blur relative">
-            {/* Hearts around the card */}
+            {/* Hearts around the card - smaller on mobile */}
             <Heart
-              className="absolute -top-4 -left-4 w-12 h-12 text-pink-500 fill-pink-500 floating-heart"
+              className="absolute -top-3 -left-3 w-6 h-6 md:w-10 md:h-10 text-pink-500 fill-pink-500 floating-heart"
               style={{ animationDelay: "0.2s" }}
             />
             <Heart
-              className="absolute -top-3 -right-5 w-12 h-12 text-red-400 fill-red-400 pulse-heart"
+              className="absolute -top-3 -right-3 w-6 h-6 md:w-10 md:h-10 text-red-400 fill-red-400 pulse-heart"
               style={{ animationDelay: "0.8s" }}
             />
             <Heart
-              className="absolute -bottom-4 -left-5 w-12 h-12 text-pink-400 fill-pink-400 pulse-heart"
+              className="absolute -bottom-3 -left-3 w-6 h-6 md:w-10 md:h-10 text-pink-400 fill-pink-400 pulse-heart"
               style={{ animationDelay: "1.3s" }}
             />
             <Heart
-              className="absolute -bottom-3 -right-4 w-12 h-12 text-red-500 fill-red-500 floating-heart"
+              className="absolute -bottom-3 -right-3 w-6 h-6 md:w-10 md:h-10 text-red-500 fill-red-500 floating-heart"
               style={{ animationDelay: "0.5s" }}
             />
 
@@ -292,30 +294,28 @@ export default function Home() {
         {/* Yes flow */}
         {answer === "yes" && (
           <Card className="mt-6 p-8 text-center space-y-6 animate-fade-in bg-white/90 backdrop-blur relative">
-            {/* Hearts around success card */}
+            {/* Hearts around success card - smaller on mobile */}
             <Heart
-              className="absolute -top-4 -left-4 w-12 h-12 text-pink-500 fill-pink-500 floating-heart"
+              className="absolute -top-3 -left-3 w-6 h-6 md:w-10 md:h-10 text-pink-500 fill-pink-500 floating-heart"
               style={{ animationDelay: "0s" }}
             />
             <Heart
-              className="absolute -top-3 -right-5 w-12 h-12 text-red-400 fill-red-400 pulse-heart"
+              className="absolute -top-3 -right-3 w-6 h-6 md:w-10 md:h-10 text-red-400 fill-red-400 pulse-heart"
               style={{ animationDelay: "0.4s" }}
             />
             <Heart
-              className="absolute -bottom-4 -left-5 w-12 h-12 text-pink-400 fill-pink-400 pulse-heart"
+              className="absolute -bottom-3 -left-3 w-6 h-6 md:w-10 md:h-10 text-pink-400 fill-pink-400 pulse-heart"
               style={{ animationDelay: "0.9s" }}
             />
             <Heart
-              className="absolute -bottom-3 -right-4 w-12 h-12 text-red-500 fill-red-500 floating-heart"
+              className="absolute -bottom-3 -right-3 w-6 h-6 md:w-10 md:h-10 text-red-500 fill-red-500 floating-heart"
               style={{ animationDelay: "0.6s" }}
             />
 
             <h2 className="text-2xl font-semibold text-pink-600">
               Yaaay! Baby baby baby💖
             </h2>
-            <p className="text-gray-600">
-              How should we celebrate?
-            </p>
+            <p className="text-gray-600">How should we celebrate?</p>
 
             {!yesChoice && (
               <div className="grid grid-cols-1 gap-3">
@@ -324,14 +324,14 @@ export default function Home() {
                   className="justify-center border-pink-300 hover:bg-pink-50"
                   onClick={() => setYesChoice("late-night-call")}
                 >
-                  Late Night Call 
+                  Late Night Call
                 </Button>
                 <Button
                   variant="outline"
                   className="justify-center border-pink-300 hover:bg-pink-50"
                   onClick={() => setYesChoice("movie-night")}
                 >
-                  Movie Night 
+                  Movie Night
                 </Button>
                 <Button
                   variant="outline"
